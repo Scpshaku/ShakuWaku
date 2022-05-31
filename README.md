@@ -1,7 +1,7 @@
-# ShakuShaku
-这个库是用来备份ShakuShaku自用圈X脚本的
+# 这个库是用来备份ShakuShaku自用圈X脚本的
 
 下面还有一些其他大佬的懒人配置
+
 
 ### QuantumultX懒人配置
 
@@ -12,4 +12,4 @@
 - ***[Tartarus2014](https://raw.githubusercontent.com/Tartarus2014/QuantumultX-Script/main/QuanX.conf)***
 - ***[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script)***
 
-#### 感谢各位大佬的规则分享以及辛勤维护！
+#### 感谢各位大佬的规则分享以及辛勤维护
