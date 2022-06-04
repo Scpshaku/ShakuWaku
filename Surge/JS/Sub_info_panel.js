@@ -41,7 +41,7 @@ let args = getArgs();
   let content = [`用量：${bytesToSize(used)} |总量: ${bytesToSize(total)}`];
 
   if (resetDayLeft) {
-    content.push(`剩余：${bytesToSize(total-used)} |重置: 剩余${resetDayLeft}天`);
+    content.push(`剩余：${bytesToSize(total-used)} |重置: ${resetDayLeft}天`);
   }
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
