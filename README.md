@@ -1,4 +1,4 @@
-# 这个库是用来备份ShakuShaku自用圈X脚本的
+# 这个库是用来备份ShakuShaku自用圈X和Surge脚本的
 
 下面还有一些其他大佬的懒人配置
 
