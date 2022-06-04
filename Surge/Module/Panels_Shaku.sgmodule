@@ -1,0 +1,23 @@
+#!name=Panels-Shaku
+#!desc=ScpShaku自用的面板 感谢各位大佬的脚本
+#!system=ios
+
+[Panel]
+# macOS不生效
+# > EDC_Surge-Panel
+# Surge Pro标题,可显示启动时间,点击刷新为重载配置
+functionstatus = script-name=functionstatus, title="𝙎𝙪𝙧𝙜𝙚", content="请刷新", update-interval=60
+# 节假日查询
+timecard = script-name=timecard,update-interval=3600
+# 流量统计
+TrafficStatistics = script-name=TrafficStatistics,update-interval=1
+#机场信息  
+# 1 两行 带百分比
+Sub_info1 = script-name=Sub_info1,update-interval=43200
+# 2 三行
+Sub_info = script-name=Sub_info,update-interval = 43200
+
+# 流媒体检测带国旗 Scpshaku
+Stream_all = script-name=Stream_all, title="流媒体解锁检测", content="请刷新", update-interval=-1
+#网络信息
+net-info-panel=title="网络状态",content="请刷新",style=info,script-name=net-info-panel
