@@ -1,5 +1,3 @@
-# 来自 @fishingworld
-
 let params = getParams($argument)
 
 ;(async () => {
