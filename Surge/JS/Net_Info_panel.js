@@ -1,6 +1,3 @@
-来自 @ventusoon
-
-
 /*
  * Surge 网络详情面板
  * @ventus
