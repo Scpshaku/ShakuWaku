@@ -4,4 +4,4 @@
 Stream_all = script-name=Stream_all, title="流媒体解锁检测", content="请刷新", update-interval=-1
 
 [Script]
-Stream_all = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/Spspc/ShakuWaku-Surge/main/JS/Stream_all.js, script-update-interval=86400
+Stream_all = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/Spspc/ShakuWaku-Surge/main/Surge/JS/Stream_all.js, script-update-interval=86400
