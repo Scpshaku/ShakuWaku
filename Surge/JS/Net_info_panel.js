@@ -48,7 +48,7 @@ if (!v4.primaryAddress && !v6.primaryAddress) {
         title: '发生错误',
         content: '无法获取网络详情\n请检查网络状态后重试',
         icon: 'wifi.exclamationmark',
-        'icon-color': '#CB1B45',
+        'icon-color': '#5C80F2',
       });
     }
 
@@ -65,7 +65,7 @@ if (!v4.primaryAddress && !v6.primaryAddress) {
         `节点位置 : ${getFlagEmoji(info.countryCode)} | ${info.country} - ${info.city
         }`,
       icon: wifi.ssid ? 'wifi' : 'simcard',
-      'icon-color': wifi.ssid ? '#005CAF' : '#F9BF45',
+      'icon-color': wifi.ssid ? '#5C80F2' : '#5C80F2',
     });
   });
 }
