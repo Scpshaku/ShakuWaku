@@ -1,5 +1,5 @@
 #!name=流媒体检测
-#!desc=带国旗流媒体检测 Spspc
+#!desc=带国旗流媒体检测 Scpshaku
 
 [Panel]
 Stream_all = script-name=Stream_all, title="流媒体解锁检测", content="请刷新", update-interval=-1
