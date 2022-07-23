@@ -230,16 +230,15 @@ panel_result['content'] = content
       } 
       
     }
-      
-      function testPublicGraphqlAPI(accessToken) {
+      function getLocationInfo() {
         return new Promise((resolve, reject) => {
           let opts = {
-            url: 'https://disney.api.edge.bamgrid.com/v1/public/graphql',
+            url: 'https://disney.api.edge.bamgrid.com/graph/v1/device/graphql',
             headers: {
               'Accept-Language': 'en',
-              Authorization: accessToken,
+              Authorization: 'ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84',
               'Content-Type': 'application/json',
-              'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36',
+              'User-Agent': UA,
             },
             body: JSON.stringify({
               query: 'mutation registerDevice($input: RegisterDeviceInput!) { registerDevice(registerDevice: $input) { grant { grantType assertion } } }',
@@ -267,6 +266,73 @@ panel_result['content'] = content
             if (error) {
               reject('Error')
               return
+            }
+      
+            if (response.status !== 200) {
+              console.log('getLocationInfo: ' + data)
+              reject('Not Available')
+              return
+            }
+      
+            data = JSON.parse(data)
+            if(data?.errors){
+              console.log('getLocationInfo: ' + data)
+              reject('Not Available')
+              return
+            }
+      
+            let {
+              token: { accessToken },
+              session: {
+                inSupportedLocation,
+                location: { countryCode },
+              },
+            } = data?.extensions?.sdk
+            resolve({ inSupportedLocation, countryCode, accessToken })
+          })
+        })
+      }
+      
+      function testHomePage() {
+        return new Promise((resolve, reject) => {
+          let opts = {
+            url: 'https://www.disneyplus.com/',
+            headers: {
+              'Accept-Language': 'en',
+              'User-Agent': UA,
+            },
+          }
+      
+          $httpClient.get(opts, function (error, response, data) {
+            if (error) {
+              reject('Error')
+              return
+            }
+            if (response.status !== 200 || data.indexOf('Sorry, Disney+ is not available in your region.') !== -1) {
+              reject('Not Available')
+              return
+            }
+      
+            let match = data.match(/Region: ([A-Za-z]{2})[\s\S]*?CNBL: ([12])/)
+            if (!match) {
+              resolve({ region: '', cnbl: '' })
+              return
+            }
+      
+            let region = match[1]
+            let cnbl = match[2]
+            resolve({ region, cnbl })
+          })
+        })
+      }
+      
+      function timeout(delay = 5000) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            reject('Timeout')
+          }, delay)
+        })
+      }
             }
       
             if (response.status !== 200) {
