@@ -234,7 +234,7 @@ panel_result['content'] = content
       function getLocationInfo() {
         return new Promise((resolve, reject) => {
           let opts = {
-            url: 'https://disney.api.edge.bamgrid.com/graph/v1/device/graphql',
+            url: 'https://disney.api.edge.bamgrid.com/graph/v1/public/graphql',
             headers: {
               'Accept-Language': 'en',
               Authorization: 'ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84',
