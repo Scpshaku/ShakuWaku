@@ -231,15 +231,15 @@ panel_result['content'] = content
       
     }
       
-      function getLocationInfo() {
+      function testPublicGraphqlAPI(accessToken) {
         return new Promise((resolve, reject) => {
           let opts = {
             url: 'https://disney.api.edge.bamgrid.com/v1/public/graphql',
             headers: {
               'Accept-Language': 'en',
-              Authorization: 'ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84',
+              Authorization: accessToken,
               'Content-Type': 'application/json',
-              'User-Agent': UA,
+              'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36',
             },
             body: JSON.stringify({
               query: 'mutation registerDevice($input: RegisterDeviceInput!) { registerDevice(registerDevice: $input) { grant { grantType assertion } } }',
