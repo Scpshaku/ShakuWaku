@@ -159,7 +159,7 @@ panel_result['content'] = content
         if (code === 'Not Found') {
           return inner_check(80018499)
         }
-        netflix_check_result += '已完整解锁 ➟ ' + code.toUpperCase()
+        netflix_check_result += '已解锁 ➟ ' + code.toUpperCase()
         return Promise.reject('BreakSignal')
       })
       .then((code) => {
@@ -167,7 +167,7 @@ panel_result['content'] = content
           return Promise.reject('Not Available')
         }
   
-        netflix_check_result += '仅解锁自制剧 ➟ ' + code.toUpperCase()
+        netflix_check_result += '仅自制 ➟ ' + code.toUpperCase()
         return Promise.reject('BreakSignal')
       })
       .catch((error) => {
