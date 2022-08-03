@@ -1,7 +1,7 @@
 /*
  * 由@LucaLin233编写
  * 原脚本地址：https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/JS/stream-all.js
- * 由@Rabbit-Spec修改
+ * 由@Scpshaku修改
  * 更新日期：2022.07.22
  * 版本：2.3
  */
@@ -152,7 +152,7 @@ panel_result['content'] = content
       })
     }
   
-    let netflix_check_result = 'Netflix: '
+    let netflix_check_result = 'Netflix✰: '
   
     await inner_check(81215567)
       .then((code) => {
